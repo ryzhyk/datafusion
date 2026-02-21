@@ -513,7 +513,7 @@ pub fn intersect_metadata_for_union<'a>(
 
     for metadata in metadatas {
         // Only keep keys that exist in both with the same value
-        intersected.retain(|k, v| metadata.get(k) == Some(v));
+        intersected.retain(|k, v| metadata.get(k) == Some(&*v));
     }
 
     intersected
